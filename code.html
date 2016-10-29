@@ -1,0 +1,41 @@
+<html id="body">
+
+<style>
+html {
+	
+	background-color: blue;
+}
+.col1 {
+	
+	background-color: red;
+	color: #555;
+	padding: 10px;
+}
+.col2 {
+	background-color: #d400d2;
+	color: #666;
+	margin: 100px;
+
+}
+
+</style>
+<font face="Comic Sans MS">
+<body onresize="changeColor()">
+	
+<h1 id="ChangeMe" class="col1">HI CLASS</h1>
+<h1 id="ChangeYou" class="col2">BYE CLASS</h1>
+
+</body>
+
+<script>
+function changeColor(){
+	var llamas = ["blue", "red", "green", "magenta"] 
+	var randNum = Math.floor(Math.random()*llamas.length)
+	var randColor = llamas[randNum]
+	document.getElementById('ChangeMe').style.color = randColor;
+	document.getElementById('ChangeYou').style.color = randColor;
+	document.getElementById('body').style.backgroundColor = randColor;
+}
+
+
+</script>
