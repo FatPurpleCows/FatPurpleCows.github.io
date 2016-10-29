@@ -1,0 +1,35 @@
+<html>
+
+<body onresize="yay()">
+
+<canvas id="mycanvas"
+		width="700px"
+		height="700px"
+		style="border: 15px groove dodgerBlue"> 
+	
+
+</canvas>
+
+<style> 
+</style>
+
+<script>
+
+function yay(){
+	var newWidth = document.body.clientWidth;
+	var newHeight = document.body.clientHeight;
+	document.getElementById("mycanvas").width = newWidth;
+	document.getElementById("mycanvas").height = newHeight;
+
+	var c=document.getElementById("mycanvas");
+ var ctx=c.getContext("2d");
+ var box = new Image()
+box.src = "box.jpg"
+  ctx.drawImage(box,10,10);
+}
+window.document.onload = yay()
+
+</script>
+
+</body>
+</html>
