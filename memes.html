@@ -1,0 +1,68 @@
+<html>
+
+<style>
+html {
+	background-color: orange;
+}
+h1 {
+	text-align: center;
+}
+img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+</style>
+
+<h1>Daniel's Dank Memes</h1>
+
+<script>
+
+//var randNum = Math.floor(Math.random()*10);
+//document.write(randNum)
+
+
+var studentList = [
+'Daniel',
+'Matan',
+'Caitlin',
+'Kamil',
+'Jean',
+'Fahran',
+'John',
+'Anneliese',
+'Fat Person'
+]
+var randStudent = studentList[Math.floor(Math.random()*8)]
+document.write(randStudent)
+
+document.write("<br><br>")
+var listAnimals = [
+'cat',
+'dog',
+'fat cow',
+'donkey',
+'sheep',
+'walrus',
+'fat bear eating tacos',
+'human eating shark'
+]
+
+var randomAnimals = listAnimals[Math.floor(Math.random()*listAnimals.length)]
+
+var myStory = [
+' is a '
+]
+var randStory = randStudent + myStory + randomAnimals
+document.write(randStory)
+
+document.write('<br><br>')
+
+var listMemes = [
+"http://thecatapi.com/api/images/get?format=src&type=gif"
+]
+var randMemes = listMemes[Math.floor(Math.random()*listMemes.length)]
+document.write("<img src='" + randMemes + "'>")
+</script>
+
+</html>
