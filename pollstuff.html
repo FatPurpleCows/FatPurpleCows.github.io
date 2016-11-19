@@ -1,0 +1,105 @@
+<canvas id="myChart" width="400" height="400"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
+
+
+
+<script>
+
+var population = ["Clinton", "Clinton", "Trump", "Clinton", "Clinton", "Trump", 
+"Trump", "Clinton", "Trump", "Trump", "Trump", "Clinton", "Clinton", 
+"Trump", "Clinton", "Clinton", "Clinton", "Clinton", "Clinton", 
+"Clinton", "Clinton", "Clinton", "Trump", "Clinton", "Clinton", 
+"Clinton", "Clinton", "Clinton", "Clinton", "Clinton", "Clinton", 
+"Clinton", "Clinton", "Clinton", "Clinton", "Clinton", "Clinton", 
+"Clinton", "Clinton", "Clinton", "Clinton", "Clinton", "Clinton", 
+"Trump", "Clinton", "Clinton", "Clinton", "Trump", "Clinton", 
+"Clinton", "Clinton", "Clinton", "Clinton", "Clinton", "Clinton", 
+"Clinton", "Clinton", "Clinton", "Trump", "Clinton", "Clinton", 
+"Clinton", "Clinton", "Clinton", "Clinton", "Clinton", "Trump", 
+"Trump", "Clinton", "Trump", "Trump", "Clinton", "Trump", "Trump", 
+"Clinton", "Trump", "Clinton", "Clinton", "Clinton", "Trump", 
+"Clinton", "Clinton", "Clinton", "Trump", "Clinton", "Clinton", 
+"Clinton", "Clinton", "Trump", "Clinton", "Clinton", "Trump", 
+"Clinton", "Clinton", "Clinton", "Trump", "Clinton", "Clinton", 
+"Clinton", "Clinton", "Trump", "Trump", "Clinton", "Clinton", 
+"Clinton", "Trump", "Trump", "Trump", "Trump", "Trump", "Clinton", 
+"Trump", "Trump", "Trump", "Clinton", "Clinton", "Trump", "Clinton", 
+"Trump", "Trump", "Trump", "Trump", "Trump", "Trump", "Trump", 
+"Clinton", "Trump", "Clinton", "Trump", "Clinton", "Trump", "Clinton", 
+"Trump", "Clinton", "Clinton", "Clinton", "Clinton", "Trump", 
+"Clinton", "Clinton", "Trump", "Clinton", "Clinton", "Clinton", 
+"Trump", "Clinton", "Trump", "Trump", "Trump", "Trump", "Trump", 
+"Trump", "Trump", "Trump", "Trump", "Clinton", "Trump", "Clinton", 
+"Clinton", "Clinton", "Clinton", "Trump", "Clinton", "Trump", 
+"Clinton", "Trump", "Trump", "Clinton", "Trump", "Trump", "Trump", 
+"Clinton", "Trump", "Trump", "Trump", "Clinton", "Clinton", "Trump", 
+"Trump", "Clinton", "Clinton", "Clinton", "Trump", "Trump", "Trump", 
+"Clinton", "Trump", "Trump", "Trump", "Clinton", "Clinton", "Trump", 
+"Trump", "Trump", "Clinton", "Trump", "Clinton", "Trump", "Clinton", 
+"Clinton", "Trump", "Trump", "Trump", "Clinton", "Trump", "Trump", 
+"Clinton", "Trump", "Trump", "Trump", "Trump", "Trump", "Clinton", 
+"Trump", "Trump", "Trump", "Trump", "Trump", "Trump", "Trump", 
+"Trump", "Trump", "Clinton", "Trump", "Trump", "Trump", "Trump", 
+"Clinton", "Trump", "Trump", "Trump", "Clinton", "Trump", "Trump", 
+"Trump", "Trump", "Trump", "Trump", "Trump", "Trump", "Trump", 
+"Trump", "Trump", "Trump", "Trump", "Trump", "Trump", "Trump", 
+"Trump", "Trump", "Trump", "Trump", "Trump", "Trump", "Trump", 
+"Trump", "Trump", "Trump", "Clinton", "Trump", "Trump", "Trump", 
+"Trump", "Trump", "Trump", "Clinton", "Trump", "Trump", "Trump", 
+"Trump", "Trump", "Trump", "Trump", "Trump", "Trump", "Trump", 
+"Trump", "Trump", "Trump", "Trump", "Trump", "Trump", "Trump", 
+"Trump", "Clinton", "Trump", "Trump", "Clinton", "Trump", "Clinton", 
+"Trump", "Clinton", "Trump", "Clinton", "Trump", "Trump", "Trump", 
+"Trump", "Trump", "Trump"]
+
+//var randCand = population[Math.floor(Math.random()*population.length)]
+//document.write(randCand)
+var clintonCount = 0
+var trumpCount = 0
+for (i = 0; i < 100; i++) {
+	var randCand = population[Math.floor(Math.random()*population.length)]
+	if(randCand == "Clinton"){
+		clintonCount = clintonCount + 1
+	}
+	if(randCand == "Trump") {
+		trumpCount = trumpCount + 1
+	}
+	//document.write(randCand)
+	
+}
+//document.write("Clinton Count: " + clintonCount)
+//document.write("<br>")	
+//document.write("Trump Count: " + trumpCount)
+
+if(trumpCount > clintonCount){
+	document.write("<h1>TRUMP WON</h1>")
+}
+if(trumpCount < clintonCount){
+	document.write("<h1>CLINTON WON</h1>")
+}
+if(trumpCount == clintonCount){
+	document.write("<h1>TIE</h1>")
+}
+
+var context = document.getElementById("myChart").getContext("2d")
+var myPieChart = new Chart(context, {
+	type: 'pie',
+	data: {
+		labels: [
+			"clinton",
+			"trump"
+		],
+		datasets: [
+			{
+			data: [clintonCount, trumpCount],
+			backgroundColor: ["blue","red"]
+			}
+		],
+		options: {
+			responsive: false
+		}
+	}
+});
+</script>
+
